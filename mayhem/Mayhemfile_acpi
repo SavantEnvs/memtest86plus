@@ -1,0 +1,11 @@
+project: savantenvs/memtest86plus
+target: fuzz_acpi
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_acpi/testsuite
+
+cmds:
+  - cmd: /mayhem/mayhem/out/fuzz_acpi
+    libfuzzer: true
+    timeout: 5

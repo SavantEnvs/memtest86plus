@@ -1,0 +1,11 @@
+project: savantenvs/memtest86plus
+target: fuzz_usbenum
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_usbenum/testsuite
+
+cmds:
+  - cmd: /mayhem/mayhem/out/fuzz_usbenum
+    libfuzzer: true
+    timeout: 5

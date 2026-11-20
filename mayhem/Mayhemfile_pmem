@@ -1,0 +1,11 @@
+project: savantenvs/memtest86plus
+target: fuzz_pmem
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_pmem/testsuite
+
+cmds:
+  - cmd: /mayhem/mayhem/out/fuzz_pmem
+    libfuzzer: true
+    timeout: 5
